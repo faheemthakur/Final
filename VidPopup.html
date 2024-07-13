@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./VidPopup.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM Plex Sans Hebrew:wght@500&display=swap"
+    />
+  </head>
+  <body>
+    <div class="vid-popup">
+      <div class="vid-popup-child"></div>
+      <div class="vid-popup-item"></div>
+      <img
+        class="logo-icon8"
+        alt=""
+        src="./public/logo2@2x.png"
+        id="popuplogoImage"
+      />
+
+      <div class="title3">
+        <div class="username1">USERNAME</div>
+      </div>
+      <button class="submit4" id="submit">
+        <div class="submit-inner"></div>
+        <div class="post6">POST</div>
+      </button>
+      <div class="upload-container">
+        <input class="upload2" required="{true}" type="file" />
+
+        <div class="upload-video">UPLOAD VIDEO</div>
+      </div>
+      <div class="description5">
+        <textarea
+          class="rectangle-textarea"
+          placeholder="ENTER DESCRIPTION"
+          autofocus="{true}"
+          form
+        >
+        </textarea>
+        <div class="username1">DESCRIPTION</div>
+      </div>
+      <img class="profile-pic-icon1" alt="" src="./public/profile-pic@2x.png" />
+    </div>
+
+    <script>
+      var popuplogoImage = document.getElementById("popuplogoImage");
+      if (popuplogoImage) {
+        popuplogoImage.addEventListener("click", function (e) {
+          window.location.href = "./Main.html";
+        });
+      }
+      
+      var popupsUBMIT = document.getElementById("submit");
+      if (popupsUBMIT) {
+        popupsUBMIT.addEventListener("click", function (e) {
+          var popup = e.currentTarget.parentNode;
+          function isOverlay(node) {
+            return !!(
+              node &&
+              node.classList &&
+              node.classList.contains("popup-overlay")
+            );
+          }
+          while (popup && !isOverlay(popup)) {
+            popup = popup.parentNode;
+          }
+          if (isOverlay(popup)) {
+            popup.style.display = "none";
+          }
+        });
+      }
+      </script>
+  </body>
+</html>

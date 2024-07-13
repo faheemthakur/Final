@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./Frame10.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM Plex Sans Hebrew:wght@500&display=swap"
+    />
+  </head>
+  <body>
+    <div class="popup">
+      <div class="popup-child"></div>
+      <div class="popup-item"></div>
+      <img
+        class="logo-icon10"
+        alt=""
+        src="./public/logo2@2x.png"
+        id="popuplogoImage"
+      />
+
+      <div class="title4">
+        <input
+          class="title-item"
+          name="title"
+          placeholder="ENTER TITLE"
+          type="text"
+        />
+
+        <div class="title5">TITLE</div>
+      </div>
+      <div class="domain-group">
+        <select class="domain1" autofocus="{true}" form>
+          <option value="Artificial Intelligence">
+            Artificial Intelligence
+          </option>
+          <option value="FLAT">FLAT</option>
+          <option value="Compiler Design">Compiler Design</option>
+        </select>
+        <div class="domain2">DOMAIN</div>
+      </div>
+      <button class="submit5" id="submit">
+        <div class="submit-child2"></div>
+        <div class="submit6">SUBMIT</div>
+      </button>
+      <div class="upload-parent1">
+        <input class="upload3" required="{true}" type="file" />
+
+        <div class="upload-file">UPLOAD FILE</div>
+      </div>
+      <div class="author1">
+        <input
+          class="author-item"
+          placeholder="ENTER AUTHOR NAME"
+          type="text"
+        />
+
+        <div class="title5">AUTHOR</div>
+      </div>
+      <div class="description9">
+        <textarea
+          class="description-child2"
+          placeholder="ENTER DESCRIPTION"
+          autofocus="{true}"
+          form
+        >
+        </textarea>
+        <div class="title5">DESCRIPTION</div>
+      </div>
+    </div>
+
+    <script>
+      var popuplogoImage = document.getElementById("popuplogoImage");
+      if (popuplogoImage) {
+        popuplogoImage.addEventListener("click", function (e) {
+          window.location.href = "./Main.html";
+        });
+      }
+      </script>
+  </body>
+</html>

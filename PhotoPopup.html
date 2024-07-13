@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./PhotoPopup.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM Plex Sans Hebrew:wght@500&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="photo-popup">
+      <div class="photo-popup-child"></div>
+      <div class="photo-popup-item"></div>
+      <img
+        class="logo-icon3"
+        alt=""
+        src="./public/logo2@2x.png"
+        id="popuplogoImage"
+      />
+
+      <div class="title1">
+        <div class="username1">USERNAME</div>
+      </div>
+      <button class="submit2" id="submit">
+        <div class="submit-item"></div>
+        <div class="post4">POST</div>
+      </button>
+      <div class="upload-group">
+        <input class="upload1" required="{true}" type="file" />
+
+        <div class="profile-picture1">PROFILE PICTURE</div>
+      </div>
+      <div class="description1">
+        <textarea
+          class="description-item"
+          placeholder="ENTER DESCRIPTION"
+          autofocus="{true}"
+          form
+        >
+        </textarea>
+        <div class="username1">DESCRIPTION</div>
+      </div>
+      <img class="profile-pic-icon" alt="" src="./public/profile-pic@2x.png" />
+    </div>
+
+    <script>
+      var popuplogoImage = document.getElementById("popuplogoImage");
+      if (popuplogoImage) {
+        popuplogoImage.addEventListener("click", function (e) {
+          window.location.href = "./Main.html";
+        });
+      }
+      
+      var popupsUBMIT = document.getElementById("submit");
+      if (popupsUBMIT) {
+        popupsUBMIT.addEventListener("click", function (e) {
+          var popup = e.currentTarget.parentNode;
+          function isOverlay(node) {
+            return !!(
+              node &&
+              node.classList &&
+              node.classList.contains("popup-overlay")
+            );
+          }
+          while (popup && !isOverlay(popup)) {
+            popup = popup.parentNode;
+          }
+          if (isOverlay(popup)) {
+            popup.style.display = "none";
+          }
+        });
+      }
+      </script>
+  </body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./ProfilePopup.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM Plex Sans Hebrew:wght@500&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="profile-popup">
+      <div class="profile-popup-child"></div>
+      <div class="profile-popup-item"></div>
+      <img
+        class="logo-icon2"
+        alt=""
+        src="./public/logo2@2x.png"
+        id="popuplogoImage"
+      />
+
+      <div class="title">
+        <input
+          class="title-child"
+          name="title"
+          placeholder="ENTER TITLE"
+          type="text"
+        />
+
+        <div class="username">USERNAME</div>
+      </div>
+      <div class="domain-parent">
+        <select class="domain" autofocus="{true}" form>
+          <option value="rather not say">rather not say</option>
+          <option value="male">male</option>
+          <option value="female">female</option>
+          <option value="other">other</option>
+        </select>
+        <div class="gender">GENDER</div>
+      </div>
+      <button class="submit" id="submit">
+        <div class="submit-child"></div>
+        <div class="submit1">SUBMIT</div>
+      </button>
+      <div class="upload-parent">
+        <input class="upload" required="{true}" type="file" />
+
+        <div class="profile-picture">PROFILE PICTURE</div>
+      </div>
+      <div class="author">
+        <input
+          class="author-child"
+          placeholder="ENTER AUTHOR NAME"
+          type="text"
+        />
+
+        <div class="username">NAME</div>
+      </div>
+      <div class="description">
+        <textarea
+          class="description-child"
+          placeholder="ENTER DESCRIPTION"
+          autofocus="{true}"
+          form
+        >
+        </textarea>
+        <div class="username">BIO</div>
+      </div>
+    </div>
+
+    <script>
+      var popuplogoImage = document.getElementById("popuplogoImage");
+      if (popuplogoImage) {
+        popuplogoImage.addEventListener("click", function (e) {
+          window.location.href = "./Main.html";
+        });
+      }
+      
+      var popupsUBMIT = document.getElementById("submit");
+      if (popupsUBMIT) {
+        popupsUBMIT.addEventListener("click", function (e) {
+          var popup = e.currentTarget.parentNode;
+          function isOverlay(node) {
+            return !!(
+              node &&
+              node.classList &&
+              node.classList.contains("popup-overlay")
+            );
+          }
+          while (popup && !isOverlay(popup)) {
+            popup = popup.parentNode;
+          }
+          if (isOverlay(popup)) {
+            popup.style.display = "none";
+          }
+        });
+      }
+      </script>
+  </body>
+</html>
